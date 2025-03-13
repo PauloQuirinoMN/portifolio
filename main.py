@@ -10,7 +10,11 @@ class App:
 
     def main(self):
         self.sidebar = Sidebar()
-        #self.content = Content
+        self.content = ft.Container(
+            content=ft.Text("Conteúdo Principal"),
+            expand=True,
+            bgcolor=ft.Colors.BLUE_GREY,
+        )
 
         layout = ft.ResponsiveRow(
             columns=12,
