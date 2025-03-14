@@ -1,4 +1,5 @@
 import flet as ft
+from componentes.skills import SkillRing
 
 class SidebarCabecalho(ft.Container):
     """
@@ -65,11 +66,17 @@ class SidebarConteudo(ft.Container):
         )
         
         
+        portugues = SkillRing(titulo='Português', valor=1.0)
+        ingles = SkillRing(titulo='Inglês', valor=0.4)
+        python = SkillRing('Python', 0.75)
 
         liguagens = ft.Row(
             controls=[
-                
-            ]
+                portugues,
+                ingles,
+                python
+            ],
+            expand=True
         )
         
         skills = ft.Container(content=ft.Text(value='comunicação'))
