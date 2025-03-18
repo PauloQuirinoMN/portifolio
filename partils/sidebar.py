@@ -1,5 +1,5 @@
 import flet as ft
-from componentes.skills import SkillRing
+from componentes.skills import SkillRing, SkillProgressbar
 
 class SidebarCabecalho(ft.Container):
     """
@@ -20,8 +20,8 @@ class SidebarCabecalho(ft.Container):
                     width=100,
                     badge=ft.Badge(small_size=10)
                 ),
-                ft.Text(value='Paulo Quirino', theme_style=ft.TextThemeStyle.BODY_LARGE, text_align=ft.TextAlign.JUSTIFY),
-                ft.Text(value='Cientista de dados',theme_style=ft.TextThemeStyle.BODY_MEDIUM)
+                ft.Text(value='Paulo Quirino', theme_style=ft.TextThemeStyle.BODY_LARGE, color=ft.Colors.WHITE, text_align=ft.TextAlign.JUSTIFY),
+                ft.Text(value='Cientista de dados',theme_style=ft.TextThemeStyle.BODY_MEDIUM, color=ft.Colors.WHITE)
             ],
             horizontal_alignment=ft.CrossAxisAlignment.CENTER
         )
@@ -42,22 +42,22 @@ class SidebarConteudo(ft.Container):
                 controls=[
                     ft.Row( 
                         controls=[
-                            ft.Text(value='Residência:', theme_style=ft.TextThemeStyle.BODY_LARGE),
-                            ft.Text(value='Brasil', theme_style=ft.TextThemeStyle.BODY_MEDIUM)
+                            ft.Text(value='Residência:', theme_style=ft.TextThemeStyle.BODY_LARGE, color=ft.Colors.WHITE),
+                            ft.Text(value='Brasil', theme_style=ft.TextThemeStyle.BODY_MEDIUM, color=ft.Colors.WHITE)
                         ],
                         alignment=ft.MainAxisAlignment.SPACE_BETWEEN
                     ),
                     ft.Row( 
                         controls=[
-                            ft.Text(value='Cidade:', theme_style=ft.TextThemeStyle.BODY_LARGE),
-                            ft.Text(value='Fortaleza', theme_style=ft.TextThemeStyle.BODY_MEDIUM)
+                            ft.Text(value='Cidade:', theme_style=ft.TextThemeStyle.BODY_LARGE, color=ft.Colors.WHITE),
+                            ft.Text(value='Fortaleza', theme_style=ft.TextThemeStyle.BODY_MEDIUM, color=ft.Colors.WHITE)
                         ],
                         alignment=ft.MainAxisAlignment.SPACE_BETWEEN
                     ),
                     ft.Row( 
                         controls=[
-                            ft.Text(value='Idade:', theme_style=ft.TextThemeStyle.BODY_LARGE),
-                            ft.Text(value='36', theme_style=ft.TextThemeStyle.BODY_MEDIUM)
+                            ft.Text(value='Idade:', theme_style=ft.TextThemeStyle.BODY_LARGE, color=ft.Colors.WHITE),
+                            ft.Text(value='36', theme_style=ft.TextThemeStyle.BODY_MEDIUM, color=ft.Colors.WHITE)
                         ],
                         alignment=ft.MainAxisAlignment.SPACE_BETWEEN
                     ),
@@ -66,26 +66,79 @@ class SidebarConteudo(ft.Container):
         )
         
         
-        portugues = SkillRing(titulo='Português', valor=1.0)
-        ingles = SkillRing(titulo='Inglês', valor=0.4)
+        sql = SkillRing(titulo='SQL', valor=0.65)
+        powerbi = SkillRing(titulo='Powerbi', valor=0.4)
         python = SkillRing('Python', 0.75)
+        gti_github= SkillRing('Git e GitHub', 0.75)
 
         liguagens = ft.Row(
             controls=[
-                portugues,
-                ingles,
-                python
+                sql,
+                powerbi,
+                python,
+                gti_github,
             ],
             expand=True
         )
         
-        skills = ft.Container(content=ft.Text(value='comunicação'))
+
+        python = SkillProgressbar('Python', 1.0)
+        sql = SkillProgressbar('SQL', 0.75)
+        py = SkillProgressbar('Python', 0.85)
+        s = SkillProgressbar('SQL', 0.75)
+        pyt = SkillProgressbar('Python', 0.69)
+        sq = SkillProgressbar('SQL', 0.75)
+
+        skills = ft.Column(
+            controls=[
+                python,
+                sql,
+                py,
+                s,
+                pyt,
+                sq
+            ]
+        )
         
-        tecnologias = ft.Container(content=ft.Text(value='SQL'))
+        tecnologias = ft.Column(
+            controls=[
+                ft.ListTile(
+                    leading=ft.Icon(name=ft.Icons.CHECK, color=ft.Colors.WHITE),
+                    title=ft.Text(value='Flet', theme_style=ft.TextThemeStyle.BODY_MEDIUM, color=ft.Colors.WHITE),
+                ),
+                ft.ListTile(
+                    leading=ft.Icon(name=ft.Icons.CHECK, color=ft.Colors.PRIMARY),
+                    title=ft.Text(value='excel', theme_style=ft.TextThemeStyle.BODY_MEDIUM),
+                ),
+                ft.ListTile(
+                    leading=ft.Icon(name=ft.Icons.CHECK, color=ft.Colors.PRIMARY),
+                    title=ft.Text(value='LGPD', theme_style=ft.TextThemeStyle.BODY_MEDIUM),
+                ),
+                ft.ListTile(
+                    leading=ft.Icon(name=ft.Icons.CHECK, color=ft.Colors.PRIMARY),
+                    title=ft.Text(value='pandas', theme_style=ft.TextThemeStyle.BODY_MEDIUM),
+                ),
+                ft.ListTile(
+                    leading=ft.Icon(name=ft.Icons.CHECK, color=ft.Colors.PRIMARY),
+                    title=ft.Text(value='storytelling', theme_style=ft.TextThemeStyle.BODY_MEDIUM),
+                ),                
+            ],
+            alignment=ft.MainAxisAlignment.START,
+            spacing=0,
+        )
         
-        cv = ft.Container(content=ft.Text(value='currículo'))
+
+        # https://sites.google.com/site/gdocs2direct/?pli=1
+        cv = ft.TextButton(
+            text='DOWNLOAD CV',
+            style=ft.ButtonStyle(color=ft.Colors.GREY),
+            icon=ft.Icons.DOWNLOAD,
+            icon_color=ft.Colors.GREY,
+            url='https://drive.google.com/uc?export=download&id=14Sby_XwtfLnMh4paW1Ifn8mQMfSPU-hK',
+        )
 
         self.content = ft.Column(
+            scroll=ft.ScrollMode.AUTO,
             controls=[
                 local,
                 ft.Divider(height=30),
@@ -96,7 +149,8 @@ class SidebarConteudo(ft.Container):
                 tecnologias,
                 ft.Divider(height=30),
                 cv,
-            ]
+            ],
+            expand=True
         )
 
 class SidebarRodape(ft.Container):
@@ -142,13 +196,14 @@ class Sidebar(ft.Container):
     """
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
-        self.expand = True
         self.bgcolor = ft.Colors.BLACK
         self.content = ft.Column(
             controls=[
-                SidebarCabecalho(),
-                SidebarConteudo(),
-                SidebarRodape(),
+                SidebarCabecalho(), # Fixo
+                ft.Container(
+                    content=SidebarConteudo(), # Conteúdo 
+                ),  
+                SidebarRodape(), # Fixo
             ],
             expand=True
         )
