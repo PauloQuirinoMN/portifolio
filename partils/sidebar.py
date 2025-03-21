@@ -15,12 +15,12 @@ class SidebarCabecalho(ft.Container):
         self.content = ft.Column(
             controls=[
                 ft.Image(
-                    src='images/face-1.jpg',
+                    src='images/img3.jpeg',
                     border_radius=ft.border_radius.all(100),
                     width=100,
                     badge=ft.Badge(small_size=10)
                 ),
-                ft.Text(value='Paulo Quirino', theme_style=ft.TextThemeStyle.BODY_LARGE, color=ft.Colors.WHITE, text_align=ft.TextAlign.JUSTIFY),
+                ft.Text(value='Paulo Quirino Maciel Neto', theme_style=ft.TextThemeStyle.BODY_LARGE, color=ft.Colors.WHITE, text_align=ft.TextAlign.JUSTIFY),
                 ft.Text(value='Cientista de dados',theme_style=ft.TextThemeStyle.BODY_MEDIUM, color=ft.Colors.WHITE)
             ],
             horizontal_alignment=ft.CrossAxisAlignment.CENTER
@@ -36,6 +36,8 @@ class SidebarConteudo(ft.Container):
         super().__init__(**kwargs)
         self.padding = ft.padding.all(20)
         self.bgcolor = ft.Colors.BLACK12
+        self.height = 500
+
 
         local = ft.Container(
             ft.Column(
@@ -56,8 +58,8 @@ class SidebarConteudo(ft.Container):
                     ),
                     ft.Row( 
                         controls=[
-                            ft.Text(value='Idade:', theme_style=ft.TextThemeStyle.BODY_LARGE, color=ft.Colors.WHITE),
-                            ft.Text(value='36', theme_style=ft.TextThemeStyle.BODY_MEDIUM, color=ft.Colors.WHITE)
+                            ft.Text(value='Nascimento:', theme_style=ft.TextThemeStyle.BODY_LARGE, color=ft.Colors.WHITE),
+                            ft.Text(value='1988', theme_style=ft.TextThemeStyle.BODY_MEDIUM, color=ft.Colors.WHITE)
                         ],
                         alignment=ft.MainAxisAlignment.SPACE_BETWEEN
                     ),
@@ -69,14 +71,12 @@ class SidebarConteudo(ft.Container):
         sql = SkillRing(titulo='SQL', valor=0.65)
         powerbi = SkillRing(titulo='Powerbi', valor=0.4)
         python = SkillRing('Python', 0.75)
-        gti_github= SkillRing('Git e GitHub', 0.75)
 
         liguagens = ft.Row(
             controls=[
                 sql,
                 powerbi,
                 python,
-                gti_github,
             ],
             expand=True
         )
@@ -107,20 +107,20 @@ class SidebarConteudo(ft.Container):
                     title=ft.Text(value='Flet', theme_style=ft.TextThemeStyle.BODY_MEDIUM, color=ft.Colors.WHITE),
                 ),
                 ft.ListTile(
-                    leading=ft.Icon(name=ft.Icons.CHECK, color=ft.Colors.PRIMARY),
-                    title=ft.Text(value='excel', theme_style=ft.TextThemeStyle.BODY_MEDIUM),
+                    leading=ft.Icon(name=ft.Icons.CHECK, color=ft.Colors.WHITE),
+                    title=ft.Text(value='excel', theme_style=ft.TextThemeStyle.BODY_MEDIUM, color=ft.Colors.WHITE),
                 ),
                 ft.ListTile(
-                    leading=ft.Icon(name=ft.Icons.CHECK, color=ft.Colors.PRIMARY),
-                    title=ft.Text(value='LGPD', theme_style=ft.TextThemeStyle.BODY_MEDIUM),
+                    leading=ft.Icon(name=ft.Icons.CHECK, color=ft.Colors.WHITE),
+                    title=ft.Text(value='LGPD', theme_style=ft.TextThemeStyle.BODY_MEDIUM, color=ft.Colors.WHITE),
                 ),
                 ft.ListTile(
-                    leading=ft.Icon(name=ft.Icons.CHECK, color=ft.Colors.PRIMARY),
-                    title=ft.Text(value='pandas', theme_style=ft.TextThemeStyle.BODY_MEDIUM),
+                    leading=ft.Icon(name=ft.Icons.CHECK, color=ft.Colors.WHITE),
+                    title=ft.Text(value='pandas', theme_style=ft.TextThemeStyle.BODY_MEDIUM, color=ft.Colors.WHITE),
                 ),
                 ft.ListTile(
-                    leading=ft.Icon(name=ft.Icons.CHECK, color=ft.Colors.PRIMARY),
-                    title=ft.Text(value='storytelling', theme_style=ft.TextThemeStyle.BODY_MEDIUM),
+                    leading=ft.Icon(name=ft.Icons.CHECK, color=ft.Colors.WHITE),
+                    title=ft.Text(value='storytelling', theme_style=ft.TextThemeStyle.BODY_MEDIUM,color=ft.Colors.WHITE),
                 ),                
             ],
             alignment=ft.MainAxisAlignment.START,
@@ -128,7 +128,7 @@ class SidebarConteudo(ft.Container):
         )
         
 
-        # https://sites.google.com/site/gdocs2direct/?pli=1
+        # https://sites.google.com/site/gdocs2direct/?pli=1j
         cv = ft.TextButton(
             text='DOWNLOAD CV',
             style=ft.ButtonStyle(color=ft.Colors.GREY),
@@ -161,6 +161,7 @@ class SidebarRodape(ft.Container):
     """
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
+        self.expand=True,
         self.padding = ft.padding.symmetric(vertical=10)
         self.content = ft.Row(
             controls=[
@@ -197,13 +198,13 @@ class Sidebar(ft.Container):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.bgcolor = ft.Colors.BLACK
+        self.expand = True
         self.content = ft.Column(
             controls=[
                 SidebarCabecalho(), # Fixo
-                ft.Container(
-                    content=SidebarConteudo(), # Conteúdo 
-                ),  
+                SidebarConteudo(),
                 SidebarRodape(), # Fixo
             ],
-            expand=True
+            expand=True,
+            
         )
