@@ -82,7 +82,7 @@ class SidebarConteudo(ft.Container):
         )
         
 
-        python = SkillProgressbar('Python', 1.0)
+        python = SkillProgressbar('Python', 0.58)
         sql = SkillProgressbar('SQL', 0.75)
         py = SkillProgressbar('Python', 0.85)
         s = SkillProgressbar('SQL', 0.75)
@@ -195,7 +195,7 @@ class Sidebar(ft.Container):
     Aceita quaisquer argumentos válidos para ft.Container.
         
     """
-    def __init__(self, **kwargs):
+    def __init__(self, **kwargs):   
         super().__init__(**kwargs)
         self.bgcolor = ft.Colors.BLACK
         self.expand = True
@@ -205,6 +205,5 @@ class Sidebar(ft.Container):
                 SidebarConteudo(),
                 SidebarRodape(), # Fixo
             ],
-            expand=True,
-            
+            expand=True,  
         )

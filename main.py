@@ -1,5 +1,6 @@
 import flet as ft
 from partils.sidebar import Sidebar
+from partils.content import MainConteudo
 
 class App:
     def __init__(self, page: ft.Page):
@@ -10,13 +11,20 @@ class App:
 
     def main(self):
         self.sidebar = Sidebar()
-        self.content = ft.Container()
+        self.content = MainConteudo()
+        self.bgcolor = ft.Colors.BLACK
 
         layout = ft.ResponsiveRow(
             columns=12,
             controls=[
-                self.sidebar,
-                self.content,
+                ft.Column(
+                    col={"sm":12, "md":4},
+                    controls=[self.sidebar],
+                ),
+                ft.Column(
+                    col={"sm":12, "md": 8},
+                    controls=[self.content],
+                )
             ],
             expand=True,
         )
