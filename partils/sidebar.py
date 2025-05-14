@@ -36,7 +36,7 @@ class SidebarConteudo(ft.Container):
         super().__init__(**kwargs)
         self.padding = ft.padding.all(20)
         self.bgcolor = ft.Colors.BLACK12
-        self.height = 500
+        
 
 
         local = ft.Container(
@@ -138,7 +138,6 @@ class SidebarConteudo(ft.Container):
         )
 
         self.content = ft.Column(
-            scroll=ft.ScrollMode.AUTO,
             controls=[
                 local,
                 ft.Divider(height=30),
@@ -150,6 +149,7 @@ class SidebarConteudo(ft.Container):
                 ft.Divider(height=30),
                 cv,
             ],
+            scroll=ft.ScrollMode.AUTO,
             expand=True
         )
 
@@ -197,13 +197,16 @@ class Sidebar(ft.Container):
     """
     def __init__(self, **kwargs):   
         super().__init__(**kwargs)
-        self.bgcolor = ft.Colors.BLACK
+        self.bgcolor = ft.Colors.GREEN
         self.expand = True
         self.content = ft.Column(
+            scroll=ft.ScrollMode.AUTO,
             controls=[
                 SidebarCabecalho(), # Fixo
                 SidebarConteudo(),
                 SidebarRodape(), # Fixo
             ],
-            expand=True,  
+            expand=True,
+            spacing=0  
         )
+        
