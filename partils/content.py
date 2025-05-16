@@ -4,6 +4,7 @@ class Banner(ft.Container):
     def __init__(self):
         super().__init__(self)
         self.bgcolor = ft.Colors.GREEN
+        self.expand = True
         self.banner()
 
     def banner(self):
@@ -12,7 +13,7 @@ class Banner(ft.Container):
             controls=[
                 ft.Text(value="Banner aqui")
             ],
-            expand=True
+            expand=True,
         )
 
 class Experencia(ft.Container):
@@ -27,7 +28,8 @@ class Experencia(ft.Container):
             controls=[
                 ft.Text(value="Experiência 1= aqui"),
                 ft.Text(value="Experiência 2= aqui")
-            ]
+            ],
+            expand=True
         )
 
 class MainConteudo(ft.Container):

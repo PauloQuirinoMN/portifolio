@@ -7,6 +7,7 @@ class App:
         self.page = page
         self.page.bgcolor = ft.Colors.BLACK
         self.page.padding = 10
+        # self.page.expand = True
         self.main()
 
 
@@ -33,7 +34,6 @@ class App:
                     controls=[self.content],
                     spacing=12,
                     expand=True,
-                    scroll=ft.ScrollMode.AUTO,
                 )
             ], 
                  

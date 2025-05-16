@@ -36,6 +36,7 @@ class SidebarConteudo(ft.Container):
         super().__init__(**kwargs)
         self.padding = ft.padding.all(20)
         self.bgcolor = ft.Colors.BLACK12
+        self.expand = True
         
 
 
@@ -77,8 +78,7 @@ class SidebarConteudo(ft.Container):
                 sql,
                 powerbi,
                 python,
-            ],
-            expand=True
+            ]
         )
         
 
@@ -150,7 +150,6 @@ class SidebarConteudo(ft.Container):
                 cv,
             ],
             scroll=ft.ScrollMode.AUTO,
-            expand=True
         )
 
 class SidebarRodape(ft.Container):
@@ -197,7 +196,6 @@ class Sidebar(ft.Container):
     def __init__(self, **kwargs):   
         super().__init__(**kwargs)
         self.bgcolor = ft.Colors.AMBER_800
-        self.expand = True
 
         cabecalho = SidebarCabecalho()
         conteudo = SidebarConteudo()
@@ -211,5 +209,6 @@ class Sidebar(ft.Container):
                 rodape,                
             ],
             spacing=0,
+            expand=True
         )
         
