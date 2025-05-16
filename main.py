@@ -6,34 +6,37 @@ class App:
     def __init__(self, page: ft.Page):
         self.page = page
         self.page.bgcolor = ft.Colors.BLACK
-        self.page.padding = 0
+        self.page.padding = 10
         self.main()
+
 
 
     def main(self):
         self.sidebar = Sidebar()
         self.content = MainConteudo()
-        self.bgcolor = ft.Colors.BLACK
-
+        
         layout = ft.ResponsiveRow(
+            columns=12,
             expand=True,
             spacing=0,
-            vertical_alignment=ft.CrossAxisAlignment.CENTER,    
-            columns=12,
+            vertical_alignment=ft.CrossAxisAlignment.CENTER,
             controls=[
                 ft.Column(
-                    col={"xs": 12, "md": 4, "lg": 4},
+                    col=4,
                     controls=[self.sidebar],
-                    spacing=0, 
+                    spacing=12, 
                     expand=True,
+                    scroll=ft.ScrollMode.AUTO,
                 ),
                 ft.Column(
-                    col={"xs": 12, "md": 8, "lg": 8},
+                    col=8,
                     controls=[self.content],
-                    spacing=0,
+                    spacing=12,
                     expand=True,
+                    scroll=ft.ScrollMode.AUTO,
                 )
-            ],    
+            ], 
+                 
         )
         
 

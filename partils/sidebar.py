@@ -192,21 +192,24 @@ class SidebarRodape(ft.Container):
 class Sidebar(ft.Container):
     """
     Barra lateral.
-    Aceita quaisquer argumentos válidos para ft.Container.
-        
+    Aceita quaisquer argumentos válidos para ft.Container. 
     """
     def __init__(self, **kwargs):   
         super().__init__(**kwargs)
-        self.bgcolor = ft.Colors.GREEN
+        self.bgcolor = ft.Colors.AMBER_800
         self.expand = True
+
+        cabecalho = SidebarCabecalho()
+        conteudo = SidebarConteudo()
+        rodape = SidebarRodape()
+
+
         self.content = ft.Column(
-            scroll=ft.ScrollMode.AUTO,
             controls=[
-                SidebarCabecalho(), # Fixo
-                SidebarConteudo(),
-                SidebarRodape(), # Fixo
+                cabecalho,
+                conteudo,
+                rodape,                
             ],
-            expand=True,
-            spacing=0  
+            spacing=0,
         )
         
