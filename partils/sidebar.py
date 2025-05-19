@@ -195,7 +195,6 @@ class Sidebar(ft.Container):
     """
     def __init__(self, **kwargs):   
         super().__init__(**kwargs)
-        self.bgcolor = ft.Colors.AMBER_800
 
         cabecalho = SidebarCabecalho()
         conteudo = SidebarConteudo()
