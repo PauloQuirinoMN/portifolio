@@ -1,5 +1,32 @@
 import flet as ft
 
+
+class ProjetoItem(ft.Container):
+    def __init__(self, titulo: str, descricao: str, url: str, **kwargs):
+        super().__init__(**kwargs)
+        self.titulo = titulo
+        self.descricao = descricao
+        self.url = url
+
+        self.padding = ft.padding.all(10)
+        self.bgcolor = ft.Colors.GREEN
+        self.content = ft.Column(
+            controls=[
+                ft.Text(value=self.titulo , style=ft.TextThemeStyle.LABEL_LARGE),
+                ft.Text(value=self.descricao, style=ft.TextThemeStyle.BODY_MEDIUM),
+                ft.TextButton(
+                    content=ft.Row(
+                        [
+                            ft.Text(value="VER AO VIVO", theme_style=ft.TextThemeStyle.BODY_LARGE, color=ft.Colors.PRIMARY),
+                            ft.Icon(name=ft.Icons.ARROW_FORWARD_IOS, size=14, color=ft.Colors.PRIMARY)
+                        ],
+                        tight=True,
+                    ),
+                    url=self.url 
+                )
+            ]
+        )
+
 class Banner(ft.Container):
     def __init__(self):
         super().__init__()
@@ -7,12 +34,18 @@ class Banner(ft.Container):
 
     def banner(self):         
         self.expand = True
+        self.margin = ft.margin.only(top=15)
         self.image = ft.DecorationImage(
             src="images/bg.jpg",
             fit=ft.ImageFit.COVER,
             repeat=ft.ImageRepeat.NO_REPEAT,
-            opacity=0.5,
+            opacity=0.7,
             scale=1,
+        )
+        self.shadow = ft.BoxShadow(
+            color=ft.Colors.WHITE70,  
+            offset=ft.Offset(x=0, y=-60),
+            spread_radius=-30,
         )
         self.content = ft.ResponsiveRow(
             expand=True,
@@ -70,6 +103,7 @@ class Experencia(ft.Container):
         self.conteudos()
 
     def conteudos(self):
+        self.padding = ft.padding.symmetric(vertical=20)
         self.expand = True
         self.content = ft.ResponsiveRow(
             columns=12,
@@ -167,6 +201,19 @@ class Experencia(ft.Container):
             expand=True
         )
 
+
+projetos = ft.ResponsiveRow(
+    expand=True,
+    columns=12,
+    controls=[
+        ProjetoItem(titulo="Calculadora Iphone", descricao="Design como a calculadora do Iphone", url="", col={"xs": 12, "md": 6, "lg": 4}),
+        ProjetoItem(titulo="Projeto dois", descricao="projeto segundo", url="", col={"xs": 12, "md": 6, "lg": 4}),
+        ProjetoItem(titulo="Treceiro projeto", descricao="Terceiro projeto", url="", col={"xs": 12, "md": 6, "lg": 4}),
+        ProjetoItem(titulo="4º projetinho", descricao="quarto projeto", url="", col={"xs": 12, "md": 6, "lg": 4}),
+        ProjetoItem(titulo="cinco ", descricao="com esse são cinco", url="", col={"xs": 12, "md": 6, "lg": 4}),
+    ]
+)
+
 class MainConteudo(ft.Container):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
@@ -175,12 +222,15 @@ class MainConteudo(ft.Container):
         instancia_banner = Banner()
         instancia_experiencia = Experencia()
         
+        
         self.content = ft.Column(
             controls=[
                 instancia_banner,
                 instancia_experiencia,
+                projetos,
             ],
-            expand=True,
+            spacing=10,
+            # expand=True,
             alignment=ft.MainAxisAlignment.CENTER,
             horizontal_alignment=ft.CrossAxisAlignment.CENTER,
         )

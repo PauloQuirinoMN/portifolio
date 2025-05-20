@@ -6,10 +6,8 @@ class App:
     def __init__(self, page: ft.Page):
         self.page = page
         self.page.bgcolor = ft.Colors.BLACK
-        self.page.padding = 10
-        # self.page.expand = True
+        self.page.padding = 30
         self.main()
-
 
 
     def main(self):
