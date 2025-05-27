@@ -9,7 +9,8 @@ class ProjetoItem(ft.Container):
         self.url = url
 
         self.padding = ft.padding.all(10)
-        self.bgcolor = ft.Colors.GREEN
+        self.bgcolor = ft.Colors.WHITE24
+        self.border_radius = ft.border_radius.all(15)
         self.content = ft.Column(
             controls=[
                 ft.Text(value=self.titulo , style=ft.TextThemeStyle.LABEL_LARGE),
@@ -39,11 +40,10 @@ class Banner(ft.Container):
             src="images/bg.jpg",
             fit=ft.ImageFit.COVER,
             repeat=ft.ImageRepeat.NO_REPEAT,
-            opacity=0.7,
-            scale=1,
+            opacity=0.9,
         )
         self.shadow = ft.BoxShadow(
-            color=ft.Colors.WHITE70,  
+            color=ft.Colors.WHITE10,  
             offset=ft.Offset(x=0, y=-60),
             spread_radius=-30,
         )
@@ -89,9 +89,9 @@ class Banner(ft.Container):
                 ft.Container(
                     col={"md":12, "lg":4},
                     content=ft.Image(
-                        src="images/face-2.png",
-                        fit=ft.ImageFit.COVER,
-                        repeat=ft.ImageRepeat.NO_REPEAT,
+                    src="images/face-2.png",
+                    fit=ft.ImageFit.COVER,
+                    repeat=ft.ImageRepeat.NO_REPEAT,
                     )
                 )
             ]
@@ -116,7 +116,7 @@ class Experencia(ft.Container):
                             style=ft.TextStyle(
                                 color=ft.Colors.PRIMARY,
                                 weight=ft.FontWeight.W_900,
-                                size=20,
+                                size=16,
                             )
                         ),
                         ft.TextSpan(
@@ -124,7 +124,7 @@ class Experencia(ft.Container):
                             style=ft.TextStyle(
                                 color=ft.Colors.WHITE,
                                 weight=ft.FontWeight.W_900,
-                                size=16,
+                                size=12,
                             )
                         )
                     ]
@@ -139,7 +139,7 @@ class Experencia(ft.Container):
                             style=ft.TextStyle(
                                 color=ft.Colors.PRIMARY,
                                 weight=ft.FontWeight.W_900,
-                                size=20,
+                                size=16,
                             )
                         ),
                         ft.TextSpan(
@@ -147,7 +147,7 @@ class Experencia(ft.Container):
                             style=ft.TextStyle(
                                 color=ft.Colors.WHITE,
                                 weight=ft.FontWeight.W_900,
-                                size=16,
+                                size=12,
                             )
                         )
                     ]
@@ -162,7 +162,7 @@ class Experencia(ft.Container):
                             style=ft.TextStyle(
                                 color=ft.Colors.PRIMARY,
                                 weight=ft.FontWeight.W_900,
-                                size=20,
+                                size=16,
                             )
                         ),
                         ft.TextSpan(
@@ -170,7 +170,7 @@ class Experencia(ft.Container):
                             style=ft.TextStyle(
                                 color=ft.Colors.WHITE,
                                 weight=ft.FontWeight.W_900,
-                                size=16,
+                                size=12,
                             )
                         )
                     ]
@@ -184,7 +184,7 @@ class Experencia(ft.Container):
                             style=ft.TextStyle(
                                 color=ft.Colors.PRIMARY,
                                 weight=ft.FontWeight.W_900,
-                                size=20,
+                                size=16,
                             )
                         ),
                         ft.TextSpan(
@@ -192,7 +192,7 @@ class Experencia(ft.Container):
                             style=ft.TextStyle(
                                 color=ft.Colors.WHITE,
                                 weight=ft.FontWeight.W_900,
-                                size=16,
+                                size=12,
                             )
                         )
                     ]
@@ -227,10 +227,11 @@ class MainConteudo(ft.Container):
             controls=[
                 instancia_banner,
                 instancia_experiencia,
+                ft.Row(controls=[ft.Text(value="Projetos", size=20, color=ft.Colors.WHITE, font_family=ft.FontWeight.BOLD, text_align=ft.alignment.center_left)], alignment=ft.MainAxisAlignment.START),
                 projetos,
             ],
             spacing=10,
-            # expand=True,
+            expand=True,
             alignment=ft.MainAxisAlignment.CENTER,
             horizontal_alignment=ft.CrossAxisAlignment.CENTER,
         )

@@ -33,11 +33,9 @@ class App:
                     spacing=12,
                     expand=True,
                 )
-            ], 
-                 
+            ],       
         )
         
-
         self.page.add(layout)
 
 if __name__ == '__main__':
