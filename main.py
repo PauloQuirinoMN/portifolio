@@ -11,8 +11,8 @@ class App:
 
 
     def main(self):
-        self.sidebar = Sidebar()
-        self.content = MainConteudo()
+        self.sidebar = Sidebar(col={'xs':0, 'md': 5, 'lg': 4, 'xxl': 3})
+        self.content = MainConteudo(col={'xs':12, 'md': 7, 'lg': 8, 'xxl': 9})
         
         layout = ft.ResponsiveRow(
             columns=12,
