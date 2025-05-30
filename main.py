@@ -2,10 +2,19 @@ import flet as ft
 from partils.sidebar import Sidebar
 from partils.content import MainConteudo
 
+
+class AppTheme:
+    theme = ft.Theme(
+        color_scheme=ft.ColorScheme(
+            background = "#042438"
+
+        )
+    )
+
 class App:
     def __init__(self, page: ft.Page):
         self.page = page
-        self.page.bgcolor = ft.Colors.BLACK
+        self.page.bgcolor = ft.Colors.ON_PRIMARY_CONTAINER
         self.page.padding = 30
         self.main()
 

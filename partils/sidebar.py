@@ -35,7 +35,7 @@ class SidebarConteudo(ft.Container):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.padding = ft.padding.all(20)
-        self.bgcolor = ft.Colors.BLACK12
+        self.bgcolor = ft.Colors.ON_PRIMARY_CONTAINER
         self.expand = True
         
 

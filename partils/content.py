@@ -10,7 +10,7 @@ class ProjetoItem(ft.Container):
         self.url = url
 
         self.padding = ft.padding.all(10)
-        self.bgcolor = ft.Colors.WHITE
+        self.bgcolor = ft.Colors.PRIMARY_CONTAINER
         self.border_radius = ft.border_radius.all(15)
         self.content = ft.Column(
             controls=[
@@ -38,13 +38,13 @@ class Banner(ft.Container):
         self.expand = True
         self.margin = ft.margin.only(top=15)
         self.image = ft.DecorationImage(
-            src="images/bg.jpg",
-            fit=ft.ImageFit.COVER,
+            src="images/fort.png",
+            fit=ft.ImageFit.FILL,
             repeat=ft.ImageRepeat.NO_REPEAT,
-            opacity=0.9,
+            opacity=1,
         )
         self.shadow = ft.BoxShadow(
-            color=ft.Colors.WHITE10,  
+            color=ft.Colors.TERTIARY_CONTAINER, 
             offset=ft.Offset(x=0, y=-60),
             spread_radius=-30,
         )
@@ -104,6 +104,7 @@ class Experencia(ft.Container):
         self.conteudos()
 
     def conteudos(self):
+        self.bgcolor = ft.Colors.TRANSPARENT
         self.padding = ft.padding.symmetric(vertical=20)
         self.expand = True
         self.content = ft.ResponsiveRow(
@@ -208,7 +209,7 @@ class PricosItem(ft.Container):
         self.preco = preco
         self.url = url
         self.items_included = items_included
-        self.bgcolor=ft.Colors.ON_INVERSE_SURFACE
+        self.bgcolor=ft.Colors.PRIMARY_CONTAINER
         self.padding=ft.padding.symmetric(vertical=20, horizontal=50)
         self.border_radius = ft.border_radius.all(20)
         self.content=ft.Column(
@@ -219,7 +220,7 @@ class PricosItem(ft.Container):
                     ft.Text(
                         spans=[
                             ft.TextSpan(text='R$', style=ft.TextStyle(color=ft.Colors.BLACK)),
-                            ft.TextSpan(text=f"{self.preco}",style=ft.TextStyle(color=ft.Colors.PRIMARY, weight=ft.FontWeight.BOLD, size=50)),
+                            ft.TextSpan(text=f"{self.preco}", style=ft.TextStyle(color=ft.Colors.PRIMARY, weight=ft.FontWeight.BOLD, size=50)),
                             ft.TextSpan(text='/hora', style=ft.TextStyle(color=ft.Colors.BLACK)),  
                         ]
                     ),
@@ -227,7 +228,7 @@ class PricosItem(ft.Container):
                         controls=[
                             ft.Row(
                                 [
-                                    ft.Icon(name=ft.icons.CHECK if item['is_included'] else ft.icons.CLOSE, color=ft.Colors.PRIMARY),
+                                    ft.Icon(name=ft.Icons.CHECK if item['is_included'] else ft.Icons.CLOSE, color=ft.Colors.PRIMARY),
                                     ft.Text(value=item['title'], theme_style=ft.TextThemeStyle.BODY_MEDIUM)
                                 ],
                                 alignment=ft.MainAxisAlignment.CENTER,
@@ -238,7 +239,7 @@ class PricosItem(ft.Container):
                         content=ft.Row(
                             controls=[
                                 ft.Text(value="QUERO ESTE", theme_style=ft.TextThemeStyle.BODY_LARGE, color=ft.Colors.PRIMARY),
-                                ft.Icon(name=ft.icons.ARROW_FORWARD_IOS, size=14, color=ft.Colors.PRIMARY),
+                                ft.Icon(name=ft.Icons.ARROW_FORWARD_IOS, size=14, color=ft.Colors.PRIMARY),
                             ],
                             alignment=ft.MainAxisAlignment.CENTER,
                         ),
@@ -255,7 +256,7 @@ class TestemunhaItem(ft.Container):
         self.testemunho = testemunho
         self.image_src = image_src
 
-        self.bgcolor = ft.Colors.ON_INVERSE_SURFACE
+        self.bgcolor = ft.Colors.PRIMARY_CONTAINER
         self.padding = ft.padding.all(30)
         self.margin = ft.margin.only(top=20)
         self.width = 300
@@ -396,8 +397,10 @@ logos = ft.Container(
 )
 
 footer = ft.Container(
-    bgcolor=ft.Colors.WHITE54,
-    padding=ft.padding.all(30),
+    bgcolor=ft.Colors.SECONDARY_CONTAINER,
+    opacity=0.2,
+    padding=ft.padding.all(20),
+    border_radius=ft.border_radius.all(10),
     content=ft.ResponsiveRow(
         columns=12,
         controls=[
