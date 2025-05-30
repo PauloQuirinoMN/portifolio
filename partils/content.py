@@ -89,7 +89,7 @@ class Banner(ft.Container):
                 ft.Container(
                     col={"md":12, "lg":4},
                     content=ft.Image(
-                    src="images/face-2.png",
+                    src="images/eueu.png",
                     fit=ft.ImageFit.COVER,
                     repeat=ft.ImageRepeat.NO_REPEAT,
                     )
