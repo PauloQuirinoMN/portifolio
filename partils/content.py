@@ -38,13 +38,13 @@ class Banner(ft.Container):
         self.expand = True
         self.margin = ft.margin.only(top=15)
         self.image = ft.DecorationImage(
-            src="images/fort.png",
+            src="images/Equipamento.jpeg",
             fit=ft.ImageFit.FILL,
             repeat=ft.ImageRepeat.NO_REPEAT,
-            opacity=1,
+            opacity=0.9,
         )
         self.shadow = ft.BoxShadow(
-            color=ft.Colors.TERTIARY_CONTAINER, 
+            color=ft.Colors.WHITE12, 
             offset=ft.Offset(x=0, y=-60),
             spread_radius=-30,
         )
@@ -73,8 +73,7 @@ class Banner(ft.Container):
                                     ft.TextSpan(text="</"),
                                     ft.TextSpan(text="code", style=ft.TextStyle(color=ft.Colors.YELLOW)),
                                     ft.TextSpan(text=" >",),
-                                ],
-                                theme_style=ft.TextThemeStyle.BODY_MEDIUM,
+                                ]
                             ),
                             ft.ElevatedButton(
                                 bgcolor=ft.Colors.BLUE_400,
