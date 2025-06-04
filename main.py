@@ -2,11 +2,19 @@ import flet as ft
 from partils.sidebar import Sidebar
 from partils.content import MainConteudo
 
+paleta = {
+    "verdemuitoescuro": "#111b21",
+    "azul claro": "#6994ae",
+    "azul medio": "#274e61",
+    "morronzinho": "#444e21",
+    "gelo": "#99a67e",
+}
+
 
 class App:
     def __init__(self, page: ft.Page):
         self.page = page
-        self.page.bgcolor = ft.Colors.BLACK12
+        self.page.bgcolor = paleta['verdemuitoescuro']
         self.page.padding = 30
         self.main()
 
