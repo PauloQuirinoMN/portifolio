@@ -18,6 +18,7 @@ class ProjetoItem(ft.Container):
 
         self.padding = ft.padding.all(10)
         self.bgcolor = paleta["gelo"]
+        self.opacity = 0.5
         self.border_radius = ft.border_radius.all(15)
         self.content = ft.Column(
             controls=[
@@ -76,7 +77,7 @@ class Banner(ft.Container):
 
                                     ft.TextSpan(
                                         text="desenvolvimento front e back-end, interface gráfica para WEB, DESKTOP e MOBILE com foco em Ciência e análise de Dados.",
-                                        style=ft.TextStyle(color=paleta["azul medio"], size=15), 
+                                        style=ft.TextStyle(color=paleta["gelo"], size=15), 
                                     ),
                                     ft.TextSpan(text="</"),
                                     ft.TextSpan(text="code", style=ft.TextStyle(color=paleta["morronzinho"])),
@@ -218,7 +219,7 @@ class PricosItem(ft.Container):
         self.preco = preco
         self.url = url
         self.items_included = items_included
-        self.bgcolor=ft.Colors.PRIMARY_CONTAINER
+        self.bgcolor=paleta["gelo"]
         self.padding=ft.padding.symmetric(vertical=20, horizontal=50)
         self.border_radius = ft.border_radius.all(20)
         self.content=ft.Column(
@@ -406,8 +407,8 @@ logos = ft.Container(
 )
 
 footer = ft.Container(
-    bgcolor=ft.Colors.SECONDARY_CONTAINER,
-    opacity=0.2,
+    bgcolor=paleta["gelo"],
+    opacity=0.3,
     padding=ft.padding.all(20),
     border_radius=ft.border_radius.all(10),
     content=ft.ResponsiveRow(
@@ -416,7 +417,8 @@ footer = ft.Container(
             ft.Text(
                 col={'xs':12, 'md':6},
                 value="© 2025 todos os direitos reservados",
-                theme_style=ft.TextThemeStyle.BODY_MEDIUM
+                theme_style=ft.TextThemeStyle.BODY_MEDIUM,
+                color=paleta["verdemuitoescuro"],
             ),
 
             ft.Text(
@@ -426,7 +428,9 @@ footer = ft.Container(
                     ft.TextSpan(text="pauloqneto@gmail.com", url='mailto:pauloqneto@gmail.com'),
                 ],
                 theme_style=ft.TextThemeStyle.BODY_MEDIUM,
-                text_align=ft.TextAlign.END
+                text_align=ft.TextAlign.END,
+                color=paleta["verdemuitoescuro"],
+                opacity=0.8,
                 
             )
         ],
@@ -447,13 +451,13 @@ class MainConteudo(ft.Container):
             controls=[
                 instancia_banner,
                 instancia_experiencia,
-                ft.Row(controls=[ft.Text(value="Projetos", size=20, color=ft.Colors.WHITE, font_family=ft.FontWeight.BOLD, text_align=ft.alignment.center_left)], alignment=ft.MainAxisAlignment.START),
+                ft.Row(controls=[ft.Text(value="Projetos", size=20, color=paleta["azul medio"], font_family=ft.FontWeight.BOLD, text_align=ft.alignment.center_left)], alignment=ft.MainAxisAlignment.START),
                 projetos,
-                ft.Row(controls=[ft.Text(value="Preços", size=20, color=ft.Colors.WHITE, font_family=ft.FontWeight.BOLD, text_align=ft.alignment.center_left)], alignment=ft.MainAxisAlignment.START),
-                precos,
-                ft.Row(controls=[ft.Text(value="Recomendações", size=20, color=ft.Colors.WHITE, font_family=ft.FontWeight.BOLD, text_align=ft.alignment.center_left)], alignment=ft.MainAxisAlignment.START),  
-                testemunhas, 
-                logos,
+                ft.Row(controls=[ft.Text(value="Nova Categoria", size=20, color=paleta["azul medio"], font_family=ft.FontWeight.BOLD, text_align=ft.alignment.center_left)], alignment=ft.MainAxisAlignment.START),
+                # precos,
+                ft.Row(controls=[ft.Text(value="Recomendações", size=20, color=paleta["azul medio"], font_family=ft.FontWeight.BOLD, text_align=ft.alignment.center_left)], alignment=ft.MainAxisAlignment.START),  
+                # testemunhas, 
+                # logos,
                 footer,
             ],
             spacing=10,
