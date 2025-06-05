@@ -2,11 +2,11 @@ import flet as ft
 from componentes.skills import SkillRing, SkillProgressbar
 
 paleta = {
-    "verdemuitoescuro": "#111b21",
-    "azul claro": "#6994ae",
-    "azul medio": "#274e61",
-    "morronzinho": "#444e21",
-    "gelo": "#99a67e",
+    "bege": "#EBE7B7",
+    "azul claro": "#029b99",
+    "azul medio": "#001f21",
+    "laranjinha": "#de4f15",
+    "amarelim": "#ecc039",
 }
 
 class SidebarCabecalho(ft.Container):
@@ -28,7 +28,7 @@ class SidebarCabecalho(ft.Container):
                     width=100,
                     badge=ft.Badge(small_size=10)
                 ),
-                ft.Text(value='Paulo Quirino Maciel Neto', theme_style=ft.TextThemeStyle.BODY_LARGE, color=paleta['gelo'], text_align=ft.TextAlign.JUSTIFY, size=25),
+                ft.Text(value='Paulo Quirino Maciel Neto', weight=ft.FontWeight.W_500, color=paleta['azul claro'], text_align=ft.TextAlign.JUSTIFY, size=25),
                 
             ],
             horizontal_alignment=ft.CrossAxisAlignment.CENTER
@@ -52,22 +52,22 @@ class SidebarConteudo(ft.Container):
                 controls=[
                     ft.Row( 
                         controls=[
-                            ft.Text(value='Formação:', theme_style=ft.TextThemeStyle.BODY_LARGE, color=paleta['gelo'],),
-                            ft.Text(value='Big Data e Inteligência Analítica',theme_style=ft.TextThemeStyle.BODY_MEDIUM, color=paleta['gelo'], size=15)
+                            ft.Text(value='Formação:', theme_style=ft.TextThemeStyle.BODY_LARGE, color=paleta['azul medio'],),
+                            ft.Text(value='Big Data e Inteligência Analítica',theme_style=ft.TextThemeStyle.BODY_MEDIUM, color=paleta['azul medio'], size=15)
                         ],
                         alignment=ft.MainAxisAlignment.START
                     ),
                     ft.Row( 
                         controls=[
-                            ft.Text(value='Residência:', theme_style=ft.TextThemeStyle.BODY_LARGE, color=paleta['gelo']),
-                            ft.Text(value='Fortaleza, CE', theme_style=ft.TextThemeStyle.BODY_MEDIUM, color=paleta['gelo'],)
+                            ft.Text(value='Residência:', theme_style=ft.TextThemeStyle.BODY_LARGE, color=paleta['azul medio']),
+                            ft.Text(value='Fortaleza, CE', theme_style=ft.TextThemeStyle.BODY_MEDIUM, color=paleta['azul medio'],)
                         ],
                         alignment=ft.MainAxisAlignment.START
                     ),
                     ft.Row( 
                         controls=[
-                            ft.Text(value='Nascimento:', theme_style=ft.TextThemeStyle.BODY_LARGE, color=paleta['gelo'],),
-                            ft.Text(value='27/07/1988', theme_style=ft.TextThemeStyle.BODY_MEDIUM, color=paleta['gelo'],)
+                            ft.Text(value='Nascimento:', theme_style=ft.TextThemeStyle.BODY_LARGE, color=paleta['azul medio'],),
+                            ft.Text(value='27/07/1988', theme_style=ft.TextThemeStyle.BODY_MEDIUM, color=paleta['azul medio'],)
                         ],
                         alignment=ft.MainAxisAlignment.START
                     ),
@@ -116,32 +116,32 @@ class SidebarConteudo(ft.Container):
         tecnologias = ft.Column(
             controls=[
                 ft.ListTile(
-                    leading=ft.Icon(name=ft.Icons.CHECK, color=paleta['azul claro']),
-                    title=ft.Text(value='Pensamento Analítico e Crítico', theme_style=ft.TextThemeStyle.BODY_MEDIUM, color=paleta['gelo']),
+                    leading=ft.Icon(name=ft.Icons.CHECK, color=paleta["laranjinha"]),
+                    title=ft.Text(value='Pensamento Analítico e Crítico', theme_style=ft.TextThemeStyle.BODY_MEDIUM, color=paleta['azul medio']),
                 ),
                 ft.ListTile(
-                    leading=ft.Icon(name=ft.Icons.CHECK, color=paleta['azul claro']),
-                    title=ft.Text(value='Curiosidade e Aprendizado Contínuo', theme_style=ft.TextThemeStyle.BODY_MEDIUM, color=paleta['gelo']),
+                    leading=ft.Icon(name=ft.Icons.CHECK, color=paleta["laranjinha"]),
+                    title=ft.Text(value='Curiosidade e Aprendizado Contínuo', theme_style=ft.TextThemeStyle.BODY_MEDIUM, color=paleta['azul medio']),
                 ),
                 ft.ListTile(
-                    leading=ft.Icon(name=ft.Icons.CHECK, color=paleta['azul claro']),
-                    title=ft.Text(value='Trabalho em Equipe', theme_style=ft.TextThemeStyle.BODY_MEDIUM, color=paleta['gelo']),
+                    leading=ft.Icon(name=ft.Icons.CHECK, color=paleta["laranjinha"]),
+                    title=ft.Text(value='Trabalho em Equipe', theme_style=ft.TextThemeStyle.BODY_MEDIUM, color=paleta['azul medio']),
                 ),
                 ft.ListTile(
-                    leading=ft.Icon(name=ft.Icons.CHECK, color=paleta['azul claro']),
-                    title=ft.Text(value='Resiliência e Adaptabilidade', theme_style=ft.TextThemeStyle.BODY_MEDIUM, color=paleta['gelo']),
+                    leading=ft.Icon(name=ft.Icons.CHECK, color=paleta["laranjinha"]),
+                    title=ft.Text(value='Resiliência e Adaptabilidade', theme_style=ft.TextThemeStyle.BODY_MEDIUM, color=paleta['azul medio']),
                 ),
                 ft.ListTile(
-                    leading=ft.Icon(name=ft.Icons.CHECK, color=paleta['azul claro']),
-                    title=ft.Text(value='storytelling', theme_style=ft.TextThemeStyle.BODY_MEDIUM,color=paleta['gelo']),
+                    leading=ft.Icon(name=ft.Icons.CHECK, color=paleta["laranjinha"]),
+                    title=ft.Text(value='storytelling', theme_style=ft.TextThemeStyle.BODY_MEDIUM,color=paleta['azul medio']),
                 ), 
                 ft.ListTile(
-                    leading=ft.Icon(name=ft.Icons.CHECK, color=paleta['azul claro']),
-                    title=ft.Text(value='Ética e Consciência de Viés', theme_style=ft.TextThemeStyle.BODY_MEDIUM,color=paleta['gelo']),
+                    leading=ft.Icon(name=ft.Icons.CHECK, color=paleta["laranjinha"]),
+                    title=ft.Text(value='Ética e Consciência de Viés', theme_style=ft.TextThemeStyle.BODY_MEDIUM,color=paleta['azul medio']),
                 ),
                 ft.ListTile(
-                    leading=ft.Icon(name=ft.Icons.CHECK, color=paleta['azul claro']),
-                    title=ft.Text(value='Empatia', theme_style=ft.TextThemeStyle.BODY_MEDIUM,color=paleta['gelo']),
+                    leading=ft.Icon(name=ft.Icons.CHECK, color=paleta['laranjinha']),
+                    title=ft.Text(value='Empatia', theme_style=ft.TextThemeStyle.BODY_MEDIUM,color=paleta['azul medio']),
                 ),               
             ],
             alignment=ft.MainAxisAlignment.START,
@@ -153,7 +153,7 @@ class SidebarConteudo(ft.Container):
             controls=[
                 local,
                 ft.Divider(height=30),
-                ft.Text(value="SOBRE MIM ", size=20, color=paleta['azul medio']),
+                ft.Text(value="Sobre Mim", size=20, color=paleta['azul claro']),
                 sobre,
                 ft.Divider(height=30),
                 liguagens,
@@ -180,19 +180,19 @@ class SidebarRodape(ft.Container):
             controls=[
                 ft.IconButton(
                     content=ft.Image(
-                        src='icons/001-instagram.png', height=15, color=ft.Colors.WHITE,     
+                        src='icons/001-instagram.png', height=15, color=paleta['laranjinha'],     
                     ),
                     url='https://www.instagram.com/pauloqneto/',
                 ),
                 ft.IconButton(
                     content=ft.Image(
-                        src='icons/002-linkedin.png', height=15, color=ft.Colors.WHITE,   
+                        src='icons/002-linkedin.png', height=15, color=paleta['laranjinha'],   
                     ),
                     url='https://www.linkedin.com/feed/',
                 ),
                 ft.IconButton(
                     content=ft.Image(
-                        src='icons/003-github.png', height=15, color=ft.Colors.WHITE,
+                        src='icons/003-github.png', height=15, color=paleta['laranjinha'],
                            
                     ),
                     url='https://github.com/PauloQuirinoMN',
@@ -209,10 +209,10 @@ value="" \
 "a pandemia me levou a repensar minha carreira. "\
 "Foi nesse período que descobri meu interesse pela Ciência de dados "\
 "e decidi fazer a transição para a área. "\
-"Em 2021, iniciei minha graduação em Big Data e Inteligência Analítica (UNIASSELVI), " \
+"Em 2021, iniciei minha graduação de 2 anos e meio em Big Data e Inteligência Analítica (UNIASSELVI), " \
 "onde adquiri bases teóricas solidas em ciência e análise de dados e tecnologias emergentes. " \
 "Paralelamente, dediquei-me ao estudo prático de ferramentas como "\
- "Python, SQL e Power BI para consolidar meu conhecimento técnico.", color=paleta['gelo'], text_align=ft.TextAlign.JUSTIFY)  
+ "Python, SQL e Power BI para consolidar meu conhecimento técnico.", color=paleta['azul medio'], text_align=ft.TextAlign.JUSTIFY, weight=ft.FontWeight.W_400, size=16)  
 
    
 class Sidebar(ft.Container):
@@ -233,9 +233,9 @@ class Sidebar(ft.Container):
 
         cv = ft.TextButton(
             text='DOWNLOAD CV',
-            style=ft.ButtonStyle(color=ft.Colors.GREY),
+            style=ft.ButtonStyle(color=paleta['laranjinha']),
             icon=ft.Icons.DOWNLOAD,
-            icon_color=ft.Colors.GREY,
+            icon_color=paleta['laranjinha'],
             url='https://drive.google.com/uc?export=download&id=14Sby_XwtfLnMh4paW1Ifn8mQMfSPU-hK',
         )
 

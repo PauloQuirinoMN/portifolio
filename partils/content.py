@@ -2,11 +2,11 @@ import flet as ft
 from typing import List, Dict, Union
 
 paleta = {
-    "verdemuitoescuro": "#111b21",
-    "azul claro": "#6994ae",
-    "azul medio": "#274e61",
-    "morronzinho": "#444e21",
-    "gelo": "#99a67e",
+    "bege": "#EBE7B7",
+    "azul claro": "#029b99",
+    "azul medio": "#001f21",
+    "laranjinha": "#de4f15",
+    "amarelim": "#ecc039",
 }
 
 class ProjetoItem(ft.Container):
@@ -16,19 +16,26 @@ class ProjetoItem(ft.Container):
         self.descricao = descricao
         self.url = url
 
-        self.padding = ft.padding.all(10)
-        self.bgcolor = paleta["gelo"]
-        self.opacity = 0.5
+        self.padding = 20
+        self.shadow = ft.BoxShadow(
+            color=paleta["azul claro"],
+            blur_radius=5,
+            spread_radius=0.5,
+            offset=ft.Offset(x=5, y=5),
+        )
+        self.bgcolor = paleta["bege"]
         self.border_radius = ft.border_radius.all(15)
         self.content = ft.Column(
+            run_alignment=ft.MainAxisAlignment.END,
+            spacing=10,
             controls=[
-                ft.Text(value=self.titulo , style=ft.TextThemeStyle.LABEL_LARGE, color=paleta["verdemuitoescuro"]),
-                ft.Text(value=self.descricao, style=ft.TextThemeStyle.BODY_MEDIUM, color=paleta["verdemuitoescuro"]),
+                ft.Text(value=self.titulo, weight=ft.FontWeight.W_500, color=paleta["azul medio"], size=16),
+                ft.Text(value=self.descricao, weight=ft.FontWeight.W_300, color=paleta["azul medio"], size=12),
                 ft.TextButton(
                     content=ft.Row(
                         [
-                            ft.Text(value="VER AO VIVO", theme_style=ft.TextThemeStyle.BODY_LARGE, color=paleta["morronzinho"]),
-                            ft.Icon(name=ft.Icons.ARROW_FORWARD_IOS, size=14, color=paleta["morronzinho"])
+                            ft.Text(value="VER", weight=ft.FontWeight.W_300, color=paleta["laranjinha"]),
+                            ft.Icon(name=ft.Icons.ARROW_FORWARD_IOS, size=15, color=paleta["laranjinha"])
                         ],
                         tight=True,
                     ),
@@ -51,11 +58,7 @@ class Banner(ft.Container):
         #     repeat=ft.ImageRepeat.NO_REPEAT,
         #     opacity=0.9,
         # # )
-        # self.shadow = ft.BoxShadow(
-        #     color=ft.Colors.WHITE12, 
-        #     offset=ft.Offset(x=0, y=-60),
-        #     spread_radius=-30,
-        # )
+        
         self.content = ft.ResponsiveRow(
             expand=True,
             columns=12,
@@ -67,20 +70,20 @@ class Banner(ft.Container):
                     padding=ft.padding.all(40),
                     content=ft.Column(
                         controls=[
-                            ft.Text(value=' "Analisar dados é extrair lições do passado para agir com precisão no presente e construir decisões mais inteligentes no futuro." ', theme_style=ft.TextThemeStyle.HEADLINE_LARGE, color=paleta["azul claro"], size=25, text_align=ft.TextAlign.START),
+                            ft.Text(value=' "Analisar dados é extrair lições do passado para agir com precisão no presente e construir decisões mais inteligentes no futuro." ', theme_style=ft.TextThemeStyle.HEADLINE_LARGE, color=paleta["azul claro"], size=25, text_align=ft.TextAlign.JUSTIFY),
                             ft.Text(
                                 spans=[
                                     ft.TextSpan(text="< "),
-                                    ft.TextSpan(text="code", style=ft.TextStyle(color=paleta["morronzinho"])),
+                                    ft.TextSpan(text="code", style=ft.TextStyle(color=paleta["laranjinha"])),
                                     ft.TextSpan(text=" >",),
 
 
                                     ft.TextSpan(
                                         text="desenvolvimento front e back-end, interface gráfica para WEB, DESKTOP e MOBILE com foco em Ciência e análise de Dados.",
-                                        style=ft.TextStyle(color=paleta["gelo"], size=15), 
+                                        style=ft.TextStyle(color=paleta["azul medio"], size=15), 
                                     ),
                                     ft.TextSpan(text="</"),
-                                    ft.TextSpan(text="code", style=ft.TextStyle(color=paleta["morronzinho"])),
+                                    ft.TextSpan(text="code", style=ft.TextStyle(color=paleta["laranjinha"])),
                                     ft.TextSpan(text=" >",),
                                 ]
                             ),
@@ -125,9 +128,9 @@ class Experencia(ft.Container):
                     col={"xs":6, "md":3},
                     spans=[
                         ft.TextSpan(
-                            text=" 1 + ",
+                            text=" 16 + ",
                             style=ft.TextStyle(
-                                color=paleta["azul medio"],
+                                color=paleta["laranjinha"],
                                 weight=ft.FontWeight.W_900,
                                 size=16,
                             )
@@ -135,7 +138,7 @@ class Experencia(ft.Container):
                         ft.TextSpan(
                             text="Anos de experiência",
                             style=ft.TextStyle(
-                                color=paleta["gelo"],
+                                color=paleta["azul medio"],
                                 weight=ft.FontWeight.W_900,
                                 size=12,
                             )
@@ -150,7 +153,7 @@ class Experencia(ft.Container):
                         ft.TextSpan(
                             text=" 2 + ",
                             style=ft.TextStyle(
-                                color=paleta["azul medio"],
+                                color=paleta["laranjinha"],
                                 weight=ft.FontWeight.W_900,
                                 size=16,
                             )
@@ -158,7 +161,7 @@ class Experencia(ft.Container):
                         ft.TextSpan(
                             text="Linguagens de programação",
                             style=ft.TextStyle(
-                                color=paleta["gelo"],
+                                color=paleta["azul medio"],
                                 weight=ft.FontWeight.W_900,
                                 size=12,
                             )
@@ -172,7 +175,7 @@ class Experencia(ft.Container):
                         ft.TextSpan(
                             text=" 5 + ",
                             style=ft.TextStyle(
-                                color=paleta["azul medio"],
+                                color=paleta["laranjinha"],
                                 weight=ft.FontWeight.W_900,
                                 size=16,
                             )
@@ -180,7 +183,7 @@ class Experencia(ft.Container):
                         ft.TextSpan(
                             text="Projetos",
                             style=ft.TextStyle(
-                                color=paleta["gelo"],
+                                color=paleta["azul medio"],
                                 weight=ft.FontWeight.W_900,
                                 size=12,
                             )
@@ -194,7 +197,7 @@ class Experencia(ft.Container):
                         ft.TextSpan(
                             text=" 10k + ",
                             style=ft.TextStyle(
-                                color=paleta["azul medio"],
+                                color=paleta["laranjinha"],
                                 weight=ft.FontWeight.W_900,
                                 size=16,
                             )
@@ -202,7 +205,7 @@ class Experencia(ft.Container):
                         ft.TextSpan(
                             text="Corações felizes",
                             style=ft.TextStyle(
-                                color=paleta["gelo"],
+                                color=paleta["azul medio"],
                                 weight=ft.FontWeight.W_900,
                                 size=12,
                             )
@@ -219,7 +222,7 @@ class PricosItem(ft.Container):
         self.preco = preco
         self.url = url
         self.items_included = items_included
-        self.bgcolor=paleta["gelo"]
+        self.bgcolor=paleta["bege"]
         self.padding=ft.padding.symmetric(vertical=20, horizontal=50)
         self.border_radius = ft.border_radius.all(20)
         self.content=ft.Column(
@@ -314,17 +317,20 @@ class TestemunhaItem(ft.Container):
         )
 
 
-testemunhas = ft.Row(
-    scroll=ft.ScrollMode.HIDDEN,
-    controls=[
-        TestemunhaItem(usuario='Paulo Neto', job='Cientista de dados', testemunho="O melhor trabalho que eu ja vi", image_src='images/testimonial-1-280x280.jpg'),
-        TestemunhaItem(usuario='Quirino', job='Analista de dados', testemunho="siplesmente incrível", image_src='images/testimonial-2-280x280.jpg'),
-        TestemunhaItem(usuario='Maciel eu', job='Desenvolvedor', testemunho="perfeito"),
-        TestemunhaItem(usuario='Maciel eu', job='Desenvolvedor', testemunho="perfeito", image_src='images/testimonial-3-280x280.jpg'),
-    ]
-)
+# testemunhas = ft.Row(
+#     scroll=ft.ScrollMode.HIDDEN,
+#     controls=[
+#         TestemunhaItem(usuario='Paulo Neto', job='Cientista de dados', testemunho="O melhor trabalho que eu ja vi", image_src='images/testimonial-1-280x280.jpg'),
+#         TestemunhaItem(usuario='Quirino', job='Analista de dados', testemunho="siplesmente incrível", image_src='images/testimonial-2-280x280.jpg'),
+#         TestemunhaItem(usuario='Maciel eu', job='Desenvolvedor', testemunho="perfeito"),
+#         TestemunhaItem(usuario='Maciel eu', job='Desenvolvedor', testemunho="perfeito", image_src='images/testimonial-3-280x280.jpg'),
+#     ]
+# )
 
 projetos = ft.ResponsiveRow(
+    alignment=ft.MainAxisAlignment.START,
+    vertical_alignment=ft.CrossAxisAlignment.CENTER,
+    spacing=20,
     expand=True,
     columns=12,
     controls=[
@@ -407,9 +413,9 @@ logos = ft.Container(
 )
 
 footer = ft.Container(
-    bgcolor=paleta["gelo"],
-    opacity=0.3,
-    padding=ft.padding.all(20),
+    bgcolor=paleta["bege"],
+    opacity=0.8,
+    padding=ft.padding.all(15),
     border_radius=ft.border_radius.all(10),
     content=ft.ResponsiveRow(
         columns=12,
@@ -418,7 +424,7 @@ footer = ft.Container(
                 col={'xs':12, 'md':6},
                 value="© 2025 todos os direitos reservados",
                 theme_style=ft.TextThemeStyle.BODY_MEDIUM,
-                color=paleta["verdemuitoescuro"],
+                color=paleta["azul medio"],
             ),
 
             ft.Text(
@@ -429,9 +435,7 @@ footer = ft.Container(
                 ],
                 theme_style=ft.TextThemeStyle.BODY_MEDIUM,
                 text_align=ft.TextAlign.END,
-                color=paleta["verdemuitoescuro"],
-                opacity=0.8,
-                
+                color=paleta["azul medio"],                
             )
         ],
     )
@@ -442,6 +446,7 @@ class MainConteudo(ft.Container):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.expand = True
+        self.padding = 10
         
         instancia_banner = Banner()
         instancia_experiencia = Experencia()
@@ -451,20 +456,21 @@ class MainConteudo(ft.Container):
             controls=[
                 instancia_banner,
                 instancia_experiencia,
-                ft.Row(controls=[ft.Text(value="Projetos", size=20, color=paleta["azul medio"], font_family=ft.FontWeight.BOLD, text_align=ft.alignment.center_left)], alignment=ft.MainAxisAlignment.START),
+                ft.Row(controls=[ft.Text(value="Projetos", size=15, color=paleta["azul medio"], weight=ft.FontWeight.W_500, text_align=ft.alignment.center_left)], alignment=ft.MainAxisAlignment.START),
                 projetos,
-                ft.Row(controls=[ft.Text(value="Nova Categoria", size=20, color=paleta["azul medio"], font_family=ft.FontWeight.BOLD, text_align=ft.alignment.center_left)], alignment=ft.MainAxisAlignment.START),
+                ft.Row(controls=[ft.Text(value="Nova Categoria", size=15, color=paleta["azul medio"], weight=ft.FontWeight.W_500, text_align=ft.alignment.center_left)], alignment=ft.MainAxisAlignment.START),
                 # precos,
-                ft.Row(controls=[ft.Text(value="Recomendações", size=20, color=paleta["azul medio"], font_family=ft.FontWeight.BOLD, text_align=ft.alignment.center_left)], alignment=ft.MainAxisAlignment.START),  
+                ft.Row(controls=[ft.Text(value="Recomendações", size=15, color=paleta["azul medio"], weight=ft.FontWeight.W_500, text_align=ft.alignment.center_left)], alignment=ft.MainAxisAlignment.START),  
                 # testemunhas, 
                 # logos,
                 footer,
             ],
-            spacing=10,
+            spacing=15,
             expand=True,
             scroll=ft.ScrollMode.AUTO,
             alignment=ft.MainAxisAlignment.CENTER,
             horizontal_alignment=ft.CrossAxisAlignment.CENTER,
         )
+        
         
  
